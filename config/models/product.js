@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 
 let productSchema = new Schema({
     productName: {type:String,required:true},
-    createdTime: { type: Date, default: Date.now },
+    createdTime: { type: Date, default: new Date().toDateString() },
     updatedTime:{ type: Date, default: Date.now }
 });
 

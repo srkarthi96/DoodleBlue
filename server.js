@@ -43,10 +43,17 @@ app.route("/product").post(product.addProduct)
 
 app.post("/order/creation", async (req, res) => {
     let result = await order.ordercreate(req)
-    res.send(result)
+    console.log("result for order creation is ",result)
+    res.json(result)
 })
 
 app.route("/order/:id").put(order.orderUpdate)
+
+app.route("/orderedProduct").get(order.orderedProduct)
+
+app.route("/orderedProductDate").get(order.orderedProductDate)
+
+app.route("/customer/noofPurchase").get(order.orderedProductCustomer)
 
 app.listen(9000);
 console.log("Listening on port 9000 " );

@@ -7,7 +7,7 @@ let userSchema = new Schema({
     customerName: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    createdTime: { type: Date, default: Date.now },
+    createdTime: { type: Date, default: new Date().toDateString() },
     updatedTime: { type: Date, default: Date.now }
 });
 
